@@ -1,0 +1,156 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hi",
+        "Hey",
+        "How are you?",
+        "Is anyone there?",
+        "Hello",
+        "Good day"
+      ],
+      "responses": [
+        "Hello, how can we assist you with your payment needs?",
+        "Hi there! How can we help you today?",
+        "Welcome! What can we do for you?",
+        "Good day! How can we assist with your payment processing?"
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": [
+        "Bye",
+        "See you later",
+        "Goodbye",
+        "Talk to you soon"
+      ],
+      "responses": [
+        "Goodbye! Have a great day.",
+        "See you later! If you have any more questions, feel free to ask.",
+        "Thanks for reaching out! Goodbye.",
+        "Take care! Let us know if you need further assistance."
+      ]
+    },
+    {
+      "tag": "thanks",
+      "patterns": [
+        "Thanks",
+        "Thank you",
+        "That's helpful",
+        "I appreciate it"
+      ],
+      "responses": [
+        "You're welcome!",
+        "Happy to help!",
+        "Glad to assist you.",
+        "Anytime! We're here to help."
+      ]
+    },
+    {
+      "tag": "services",
+      "patterns": [
+        "What services do you offer?",
+        "What can you do?",
+        "Tell me about your services",
+        "What payment solutions do you provide?"
+      ],
+      "responses": [
+        "We offer a range of payment processing services including credit card processing, online payments, and fraud protection.",
+        "Our services include secure payment gateways, point-of-sale systems, and mobile payment solutions.",
+        "We provide comprehensive payment processing services for both online and in-store transactions.",
+        "Our offerings include credit and debit card processing, digital wallets, and payment security solutions."
+      ]
+    },
+    {
+      "tag": "fees",
+      "patterns": [
+        "What are your fees?",
+        "How much do you charge?",
+        "What are your rates?",
+        "What does it cost to use your service?"
+      ],
+      "responses": [
+        "Our fees vary depending on the service and volume of transactions. Please contact our sales team for a detailed quote.",
+        "We offer competitive rates tailored to your business needs. Reach out to us for more information.",
+        "Our pricing structure is flexible and designed to suit different business sizes. Get in touch for a customized quote.",
+        "For detailed pricing, please visit our website or contact our customer service team."
+      ]
+    },
+    {
+      "tag": "security",
+      "patterns": [
+        "How secure is your service?",
+        "What security measures do you have?",
+        "Is my data safe with you?",
+        "How do you protect my information?"
+      ],
+      "responses": [
+        "We use advanced encryption and security protocols to protect your data.",
+        "Your security is our top priority. We adhere to industry standards to ensure your information is safe.",
+        "We implement robust security measures including encryption, tokenization, and fraud monitoring.",
+        "Our services are compliant with PCI-DSS standards to ensure the highest level of security for your transactions."
+      ]
+    },
+    {
+      "tag": "support",
+      "patterns": [
+        "How can I get support?",
+        "Do you offer customer support?",
+        "I need help with my account",
+        "Who can I contact for assistance?"
+      ],
+      "responses": [
+        "You can reach our customer support team 24/7 via phone, email, or live chat.",
+        "Our support team is here to help you anytime. Contact us through our support page.",
+        "For assistance, please visit our help center or contact our support team directly.",
+        "We offer comprehensive support through various channels. Check our website for more details."
+      ]
+    },
+    {
+      "tag": "integration",
+      "patterns": [
+        "How do I integrate your service?",
+        "Is your service easy to integrate?",
+        "Can I integrate your payment gateway with my website?",
+        "What platforms do you support for integration?"
+      ],
+      "responses": [
+        "We provide detailed integration guides and support for various platforms including e-commerce websites, mobile apps, and POS systems.",
+        "Our payment gateway can be easily integrated with most major platforms. Contact us for specific instructions.",
+        "We offer seamless integration with popular platforms such as Shopify, WooCommerce, and Magento.",
+        "Our API documentation provides step-by-step instructions for easy integration. Reach out if you need any help."
+      ]
+    },
+    {
+      "tag": "account",
+      "patterns": [
+        "How do I create an account?",
+        "How do I sign up?",
+        "Can I open an account with you?",
+        "What is the process to register?"
+      ],
+      "responses": [
+        "You can create an account by visiting our website and clicking on the 'Sign Up' button.",
+        "To open an account, simply fill out the registration form on our website.",
+        "Signing up is easy! Just go to our website and follow the instructions to create an account.",
+        "Visit our registration page to create a new account. Contact us if you need any assistance."
+      ]
+    },
+    {
+      "tag": "refunds",
+      "patterns": [
+        "How do I request a refund?",
+        "What is your refund policy?",
+        "Can I get my money back?",
+        "How long does it take to process a refund?"
+      ],
+      "responses": [
+        "To request a refund, please contact our customer support team with your transaction details.",
+        "Our refund policy allows you to request a refund within 30 days of the transaction. Contact us for more information.",
+        "Refunds are processed within 5-7 business days. Please reach out to our support team to initiate a refund.",
+        "You can find our refund policy on our website. For any refund requests, contact our support team."
+      ]
+    }
+  ]
+}

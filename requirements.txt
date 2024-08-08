@@ -1,0 +1,5 @@
+Flask==2.2.2
+Flask_Cors==4.0.1
+nltk==3.7
+numpy==1.23.5
+torch==1.12.1
