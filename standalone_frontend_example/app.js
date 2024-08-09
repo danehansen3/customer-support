@@ -89,3 +89,34 @@ class Chatbox {
 
 const chatbox = new Chatbox();
 chatbox.display();
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
+document.getElementById('chat-with-venie-btn').addEventListener('click', function() {
+    document.getElementById('venie-popup').style.display = 'block';
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const closePopupButton = document.getElementById('close-popup');
+    if (closePopupButton) {
+        closePopupButton.addEventListener('click', function() {
+            document.getElementById('venie-popup').style.display = 'none';
+        });
+    } else {
+        console.error("Element with ID 'close-popup' not found");
+    }
+});
+
+window.onclick = function(event) {
+    if (event.target === document.getElementById('venie-popup')) {
+        document.getElementById('venie-popup').style.display = 'none';
+    }
+}
