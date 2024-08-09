@@ -1,17 +1,22 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import { Container, Box, Typography, Button, ImageList, ImageListItem } from "@mui/material";
+import Chatbot from "./components/chatbot";
 
 export default function Home() {
 
   const itemData = [
     {
       img: '/assets/coffee-with-friends.jpg',
-      title: "Coffee with a friend"
+      title: "Coffee with a friend",
+      rows: '2',
+      cols: '2'
     },
     {
       img: '/assets/brunch-with-friends.jpg',
-      title: "Brunch with friends"
+      title: "Brunch with friends",
+      rows: '2',
+      cols: '2'
     }
   ]
   
@@ -66,8 +71,8 @@ export default function Home() {
             VENIE
           </Typography>
         </Box>
-        <Typography variant='body1' className="primary-text" margin={'12px'}>Reach out with any questions you have about using or having Venmo.</Typography>
-        <Container sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, justifyContent: 'space-evenly', marginTop: "12px" }}>
+        <Typography variant='body1' className="primary-text" margin={'12px'}>Venie is here to help you with any questions you might have. Ask Venie about payments, transactions, and more!</Typography>
+        <Container sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, gap: 2, marginTop: "12px" }}>
           <Button variant="outlined" fullWidth>Chat with Venie</Button>
           <Button variant="outlined" fullWidth>FAQs</Button>
         </Container>
@@ -98,14 +103,15 @@ export default function Home() {
         {/* <Image src={"/assets/brunch-with-friends.jpg"} width={250} height={250} aria-label='Brunch with Friends'></Image>
         <Image src={"/assets/coffee-with-friends.jpg"} width={250} height={250} aria-label="Coffee with friend"></Image> */}
       </Box>
-      <Box sx={{
-        display: 'absolute',
-        bottom: '5px',
-        right: '5px',
+      {/* <Box sx={{
+        // display: 'absolute',
+        // bottom: '5px',
+        // right: '5px',
         alignContent: 'end'
       }}>
         <Image width='120' height='120' src='/assets/venie.jpg' aria-label='Venie AI chatbot'></Image>
-      </Box>
+      </Box> */}
+      {/* <Chatbot /> */}
     </Container>
     // <main className={styles.main}>
     //   <div className={styles.description}>
