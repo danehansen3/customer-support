@@ -1,25 +1,28 @@
 import styles from "./chatbot.module.css";
-import { Container } from "@mui/material";
+import { Container, Typography, Rating, Image, Box, Button } from "@mui/material";
 import { Chatbox } from "./app";
 import { useState, useEffect } from 'react'
 
 export default function Chatbot() {
     const [isOpen, setIsOpen] = useState(false);
+    const [ratingValue, setRatingValue] = useState(0);
+    const [message, setMessage] = useState('');
+
+    const handleSendMessage = () => {
+        //TODO: implement send message function
+        console.log('Sending Message', message);
+        setMessage('');
+    };
+
+    const handleKeyDown = (e) => {
+        if (e.key === 'Enter' && !e.shiftKey) {
+            e.preventDefault();
+            handleSendMessage();
+        }
+    };
 
 
     // TODO: update below code to match react form and styling
-
-    function handleOpen() {
-        useEffect(() =>
-            setIsOpen(true)
-        ), []
-    }
-
-    function handleClose() {
-        useEffect(() => {
-            setIsOpen(false)
-        }), []
-    }
 
     // const chatbox = new Chatbox();
     // chatbox.display();
@@ -38,9 +41,10 @@ export default function Chatbot() {
 
     return (
         <Container>
-            <div className={styles.chatbox} id={styles.chatbox_id}>
-                <div className={styles.chatbox__support}>
-                    <div className={styles.chatbox__header}>
+            <Box className={styles.chatbox} id={styles.chatbox_id} >
+                <Typography variant='h2' sx={{display: isOpen ? "block": "none"}}>HELLO!</Typography>
+                <Box className={styles.chatbox__support} sx={{ display: isOpen ? 'block' : 'none', zIndex: 10,}}>
+                    <Box className={styles.chatbox__header}>
                         <div className={styles.chatbox__image__header}>
                             <img src="https://img.icons8.com/color/48/000000/circled-user-female-skin-type-5--v1.png" alt="image" />
                         </div>
@@ -48,19 +52,41 @@ export default function Chatbot() {
                             <h4 className={styles.chatbox__heading__header}>Chat support</h4>
                             <p className={styles.chatbox__description__header}>I'm Venie! Do you need help? Chat with me now!</p>
                         </div>
-                    </div>
-                    <div className={styles.chatbox__messages}>
-                        <div></div>
-                    </div>
-                    <div className={styles.chatbox__footer}>
-                        <input type="text" placeholder="Write a message..." />
-                        <button className={`${styles.chatbox__send__footer} ${styles.send__button}`}>Send</button>
-                    </div>
-                </div>
-                <div className={styles.chatbox__button}>
-                    <button onClick={isOpen ? handleClose: handleOpen}><img src="./images/chatbox-icon.svg" /></button>
-                </div>
-            </div>
+                    </Box>
+                    <Box className={styles.chatbox__messages}>
+                        {/* Messages will be displayed here */}
+                   </Box>
+                    <Typography component="legend">Rate your experience</Typography>
+                    <Rating
+                        name="chat-rating"
+                        value={ratingValue}
+                        onChange={(event, newValue) => setRatingValue(newValue)}
+                    />
+                    <Box className={styles.chatbox__footer}>
+                        <input
+                            type="text"
+                            placeholder="Write a message..."
+                            value={message}
+                            onChange={(e) => setMessage(e.target.value)}
+                            onKeyDown={handleKeyDown}
+                        />
+                        <button
+                            className={`${styles.chatbox__send__footer} ${styles.send__button}`}
+                            onClick={handleSendMessage}
+                        >
+                            Send
+                        </button>
+                    </Box>
+                </Box>
+                <Box className={styles.chatbox__button}>
+                    <Button onClick={() => {
+                        setIsOpen(!isOpen);
+                        console.log('button pressed', isOpen);
+                        }}>
+                        <img src="/assets/chatbox-icon.svg" alt="Chatbox icon" />
+                    </Button>
+                </Box>
+            </Box>
         </Container>
     );
 };
