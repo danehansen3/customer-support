@@ -4,6 +4,8 @@ import styles from "./page.module.css";
 import { Container, Box, Typography, Button, ImageList, ImageListItem } from "@mui/material";
 import Chatbot from "./components/chatbot";
 import { useEffect, useState } from "react";
+import Link from 'next/link';
+
 
 // TODO: move global styles that are specific to landing page to 
 // page.modules.css and update classNames and ids to {styles.className}
@@ -14,6 +16,7 @@ export default function Home() {
   useEffect(() => {
     setIsLoaded(true);
   }, []);
+  
 
   const itemData = [
     {
@@ -107,7 +110,9 @@ export default function Home() {
             </Typography>
           <Container sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, gap: 2, marginTop: "12px" }}>
             <Button variant="outlined" fullWidth>Chat with Venie</Button>
-            <Button variant="outlined" fullWidth>FAQs</Button>
+            <Link href="/faq" passHref legacyBehavior>
+              <Button variant="outlined" fullWidth>FAQs</Button>
+            </Link>
           </Container>
         </Box>
         <Box sx={{
