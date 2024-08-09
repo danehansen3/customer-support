@@ -118,10 +118,10 @@ export default function Home() {
             <Button variant="outlined" fullWidth>FAQs</Button>
           </Container>
         </Box>
-        <Box sx={{
+        {/* <Box sx={{
           p: 1,
           m: 1,
-        }}>
+        }}> */}
           {/* <ImageList 
           sx={{ width: 500, height: 450 }} 
           variant="quilted" 
@@ -138,7 +138,7 @@ export default function Home() {
           </ImageList> */}
           {/* <Image src={"/assets/brunch-with-friends.jpg"} width={250} height={250} aria-label='Brunch with Friends'></Image>
           <Image src={"/assets/coffee-with-friends.jpg"} width={250} height={250} aria-label="Coffee with friend"></Image> */}
-        </Box>
+        {/* </Box> */}
         {/* <Box sx={{
           // display: 'absolute',
           // bottom: '5px',
