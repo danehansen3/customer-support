@@ -155,10 +155,7 @@ export default function Home() {
         }}>
           <Image width='120' height='120' src='/assets/venie.jpg' aria-label='Venie AI chatbot'></Image>
         </Box> */}
-<<<<<<< HEAD
         <Chatbot isOpen={isChatOpen} setIsOpen={setIsChatOpen} />
-=======
->>>>>>> 0d592410e552e31d8c12f78461a5478fbd612091
       </Box>
       <Chatbot />
     </Container>
