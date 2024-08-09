@@ -87,7 +87,7 @@ export default function Home() {
         // borderRadius: '8px',
         // overflow: 'hidden'
       }}>
-        <ImageList 
+        {/* <ImageList 
         sx={{ width: 500, height: 450 }} 
         variant="quilted" 
         cols={4}
@@ -97,9 +97,10 @@ export default function Home() {
               <img  src={item.img} width={121 * item.cols} height={121 * item.rows}
               alt={item.title}
               loading="lazy" />
+              <Box>Test Box</Box>
             </ImageListItem>
           ))}
-        </ImageList>
+        </ImageList> */}
         {/* <Image src={"/assets/brunch-with-friends.jpg"} width={250} height={250} aria-label='Brunch with Friends'></Image>
         <Image src={"/assets/coffee-with-friends.jpg"} width={250} height={250} aria-label="Coffee with friend"></Image> */}
       </Box>
