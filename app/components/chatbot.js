@@ -42,12 +42,11 @@ export default function Chatbot() {
     return (
         <Container>
             <Box className={styles.chatbox} id={styles.chatbox_id} >
-                <Typography variant='h2' sx={{display: isOpen ? "block": "none"}}>HELLO!</Typography>
-                <Box className={styles.chatbox__support} sx={{ display: isOpen ? 'block' : 'none', zIndex: 10,}}>
+                <Box className={styles.chatbox__support} sx={{ display: isOpen ? 'flex' : 'none', zIndex: 10,}}>
                     <Box className={styles.chatbox__header}>
-                        <div className={styles.chatbox__image__header}>
-                            <img src="https://img.icons8.com/color/48/000000/circled-user-female-skin-type-5--v1.png" alt="image" />
-                        </div>
+                        <Button onClick={() => setIsOpen(false)} className={styles.chatbox__image__header}>
+                            <img src="/assets/venie.jpg" width={60} alt="image" />
+                            </Button>
                         <div className={styles.chatbox__content__header}>
                             <h4 className={styles.chatbox__heading__header}>Chat support</h4>
                             <p className={styles.chatbox__description__header}>I'm Venie! Do you need help? Chat with me now!</p>
@@ -56,12 +55,14 @@ export default function Chatbot() {
                     <Box className={styles.chatbox__messages}>
                         {/* Messages will be displayed here */}
                    </Box>
-                    <Typography component="legend">Rate your experience</Typography>
+                   {/* TODO add this back once ratings put in place */}
+                   {/* <Box className="ratings" sx={{margin: 2}}>
+                    <Typography component="legend" sx={{color: '#d0cfcfdc'}}>Rate your experience</Typography>
                     <Rating
                         name="chat-rating"
                         value={ratingValue}
                         onChange={(event, newValue) => setRatingValue(newValue)}
-                    />
+                    /></Box> */}
                     <Box className={styles.chatbox__footer}>
                         <input
                             type="text"
@@ -78,11 +79,11 @@ export default function Chatbot() {
                         </button>
                     </Box>
                 </Box>
-                <Box className={styles.chatbox__button}>
+                <Box className={styles.chatbox__button} sx={{display: isOpen ? 'none' : 'block'}}>
                     <Button onClick={() => {
                         setIsOpen(!isOpen);
                         console.log('button pressed', isOpen);
-                        }}>
+                        }} >
                         <img src="/assets/chatbox-icon.svg" alt="Chatbox icon" />
                     </Button>
                 </Box>
