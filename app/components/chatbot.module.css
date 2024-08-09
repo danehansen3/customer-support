@@ -8,20 +8,18 @@
 
 /* CONTENT IS CLOSE */
 .chatbox__support {
-    display: flex;
     flex-direction: column;
-    background: #eee;
+    background: #f0f0f0c5;
     width: 300px;
     height: 350px;
-    z-index: -123456;
-    opacity: 0;
+    /* opacity: 0; */
     transition: all .5s ease-in-out;
 }
 
 /* CONTENT ISOPEN */
 .chatbox--active {
     transform: translateY(-40px);
-    z-index: 123456;
+    /* z-index: 123456; */
     opacity: 1;
 
 }
@@ -29,7 +27,9 @@
 /* BUTTON */
 .chatbox__button {
     text-align: right;
-
+   & button:hover {
+    background-color: #d0cfcfdc ;
+    }
 }
 
 .send__button {
@@ -79,12 +79,11 @@
 }
 
 .chatbox__support {
-    background: #f9f9f9;
+    background: #f9f9f9dc;
     height: 450px;
     width: 350px;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+    border-radius: 20px;
 }
 
 /* HEADER */

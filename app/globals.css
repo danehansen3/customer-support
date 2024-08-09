@@ -11,6 +11,10 @@
   --accent-color: #df608f;
   --input-field-color: #666666;
   --response-green-color: #5c785d;
+  --primaryGradient: linear-gradient(93.12deg, #003c6b 0.52%, #48bbfe 100%);
+    --secondaryGradient: linear-gradient(268.91deg, #003c6b -2.14%, #48bbfe 99.69%);
+    --primaryBoxShadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+    --secondaryBoxShadow: 0px -10px 15px rgba(0, 0, 0, 0.1);
 }
 
 .primary-text {
