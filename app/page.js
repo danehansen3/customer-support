@@ -35,7 +35,8 @@ export default function Home() {
       display: "flex", flexDirection: 'column', p: 1,
       m: 1, margin: 'auto'
     }}>
-      <Box sx={{
+      {/* Re-add if Log in and Sign up added */}
+      {/* <Box sx={{
         display: 'flex',
         justifyContent: 'flex-end',
         width: '100%',
@@ -43,7 +44,7 @@ export default function Home() {
       }}>
         <Button variant="outlined" sx={{ mr: 1 }}>Log In</Button>
         <Button variant="contained">Sign Up</Button>
-      </Box>
+      </Box> */}
       <Box sx={{
         display: "flex",
         flexDirection: 'row',
@@ -112,12 +113,6 @@ export default function Home() {
         <Box sx={{
           p: 1,
           m: 1,
-          // width: '100%',
-          // height: '80vh',
-          // position: 'relative',
-          // bgcolor: "#003d6b56",
-          // borderRadius: '8px',
-          // overflow: 'hidden'
         }}>
           {/* <ImageList 
           sx={{ width: 500, height: 450 }} 
