@@ -51,14 +51,19 @@ export default function Chatbot({ isOpen, setIsOpen }) {
                 <Box className={styles.chatbox__header}>
                     <img src="/assets/venie.jpg" alt="Chatbox Header Image" className={styles.chatbox__image__header} />
                     <div className={styles.chatbox__content__header}>
-                        <h4 className={styles.chatbox__heading__header}>Chat support</h4>
-                        <p className={styles.chatbox__description__header}>I'm Venie! Do you need help? Chat with me now!</p>
+                        {/* <h4 className={styles.chatbox__heading__header}>Chat support</h4> */}
+                        {/* <p className={styles.chatbox__description__header}>I'm Venie! Do you need help? Chat with me now!</p> */}
                     </div>
                     <Button onClick={() => setIsOpen(false)} className={styles.chatbox__closeButton}>
                         <HighlightOffIcon />
                     </Button>
                 </Box>
                 <Box className={styles.chatbox__messages}>
+                        <Box
+                            className={`${styles.messages__item} ${styles.messages__item_operator}`}
+                        >
+                            I'm Venie! What can I help you with today?
+                        </Box>
                     {messages.map((msg, index) => (
                         <Box
                             key={index}

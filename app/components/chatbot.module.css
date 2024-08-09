@@ -82,23 +82,22 @@
     padding: 0 20px;
     margin-top: auto;
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     overflow-y: scroll;
     flex-grow: 1;
 }
 
 .messages__item {
     margin-top: 10px;
-    background: #E0E0E0;
     padding: 8px 12px;
     max-width: 70%;
     border-radius: 20px;
 }
 
 .messages__item_visitor {
-    background: #E0E0E0;
+    background: var(--response-green-color);
     align-self: flex-end;
-    color: black;
+    color: white;
 }
 
 .messages__item-visitor,
@@ -108,11 +107,11 @@
     border-bottom-right-radius: 20px;
 }
 
-.messages__item-operator {
+.messages__item_operator {
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     border-bottom-left-radius: 20px;
-    background: var(--primary);
+    background: var(--primary-color);
     color: white;
     align-self: flex-start;
 }
