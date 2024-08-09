@@ -3,6 +3,9 @@ import styles from "./page.module.css";
 import { Container, Box, Typography, Button, ImageList, ImageListItem } from "@mui/material";
 import Chatbot from "./components/chatbot";
 
+// TODO: move global styles that are specific to landing page to 
+// page.modules.css and update classNames and ids to {styles.className}
+
 export default function Home() {
 
   const itemData = [
