@@ -1,8 +1,14 @@
 import styles from "./chatbot.module.css";
 import { Container } from "@mui/material";
 import {Chatbox} from "./app";
+import {useState, useEffect} from 'react'
 
 export default function Chatbot() {
+    const[isOpen, setIsOpen] = useState(false);
+
+    
+    // TODO: update below code to match react form and styling
+
     const chatbox = new Chatbox();
 chatbox.display();
 
