@@ -39,26 +39,26 @@ window.onclick = function(event) {
 
     return (
         <Container>
-    <div class={styles.chatbox} id="styles.chatbox_id">
-        <div class="styles.chatbox__support">
-            <div class="styles.chatbox__header">
-                <div class="styles.chatbox__image--header">
+    <div class={styles.chatbox} id={styles.chatbox_id}>
+        <div class={styles.chatbox__support}>
+            <div class={styles.chatbox__header}>
+                <div class={styles.chatbox__image-header}>
                     <img src="https://img.icons8.com/color/48/000000/circled-user-female-skin-type-5--v1.png" alt="image"/>
                 </div>
-                <div class="styles.chatbox__content--header">
-                    <h4 class="styles.chatbox__heading--header">Chat support</h4>
-                    <p class="styles.chatbox__description--header">I'm Venie! Do you need help? Chat with me now!</p>
+                <div class={styles.chatbox__content-header}>
+                    <h4 class={styles.chatbox__heading-header}>Chat support</h4>
+                    <p class={styles.chatbox__description-header}>I'm Venie! Do you need help? Chat with me now!</p>
                 </div>
             </div>
-            <div class="styles.chatbox__messages">
+            <div class={styles.chatbox__messages}>
                 <div></div>
             </div>
-            <div class="styles.chatbox__footer">
+            <div class={styles.chatbox__footer}>
                 <input type="text" placeholder="Write a message..."/>
-                <button class="styles.chatbox__send--footer styles.send__button">Send</button>
+                <button class={`${styles.chatbox__send-footer} ${styles.send__button}`}>Send</button>
             </div>
         </div>
-        <div class="styles.chatbox__button">
+        <div class={styles.chatbox__button}>
             <button><img src="./images/chatbox-icon.svg" /></button>
         </div>
     </div>
