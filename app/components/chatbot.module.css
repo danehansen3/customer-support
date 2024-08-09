@@ -100,16 +100,16 @@
     box-shadow: var(--primaryBoxShadow);
 }
 
-.chatbox__image-header {
+.chatbox__image__header {
     margin-right: 10px;
 }
 
-.chatbox__heading-header {
+.chatbox__heading__header {
     font-size: 1.2rem;
     color: white;
 }
 
-.chatbox__description-header {
+.chatbox__description__header {
     font-size: .9rem;
     color: white;
 }
@@ -163,7 +163,7 @@
     text-align: left;
 }
 
-.chatbox__send--footer {
+.chatbox__send__footer {
     color: white;
 }
 

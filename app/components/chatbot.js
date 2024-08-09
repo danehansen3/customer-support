@@ -21,8 +21,8 @@ export default function Chatbot() {
         }), []
     }
 
-    const chatbox = new Chatbox();
-    chatbox.display();
+    // const chatbox = new Chatbox();
+    // chatbox.display();
 
     // Don't think this code is necessary for chat bot but will look more into it if error populates
     // document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -38,26 +38,26 @@ export default function Chatbot() {
 
     return (
         <Container>
-            <div class={styles.chatbox} id={styles.chatbox_id}>
-                <div class={styles.chatbox__support}>
-                    <div class={styles.chatbox__header}>
-                        <div class={styles.chatbox__image - header}>
+            <div className={styles.chatbox} id={styles.chatbox_id}>
+                <div className={styles.chatbox__support}>
+                    <div className={styles.chatbox__header}>
+                        <div className={styles.chatbox__image__header}>
                             <img src="https://img.icons8.com/color/48/000000/circled-user-female-skin-type-5--v1.png" alt="image" />
                         </div>
-                        <div class={styles.chatbox__content - header}>
-                            <h4 class={styles.chatbox__heading - header}>Chat support</h4>
-                            <p class={styles.chatbox__description - header}>I'm Venie! Do you need help? Chat with me now!</p>
+                        <div className={styles.chatbox__content__header}>
+                            <h4 className={styles.chatbox__heading__header}>Chat support</h4>
+                            <p className={styles.chatbox__description__header}>I'm Venie! Do you need help? Chat with me now!</p>
                         </div>
                     </div>
-                    <div class={styles.chatbox__messages}>
+                    <div className={styles.chatbox__messages}>
                         <div></div>
                     </div>
-                    <div class={styles.chatbox__footer}>
+                    <div className={styles.chatbox__footer}>
                         <input type="text" placeholder="Write a message..." />
-                        <button class={`${styles.chatbox__send - footer} ${styles.send__button}`}>Send</button>
+                        <button className={`${styles.chatbox__send__footer} ${styles.send__button}`}>Send</button>
                     </div>
                 </div>
-                <div class={styles.chatbox__button}>
+                <div className={styles.chatbox__button}>
                     <button onClick={isOpen ? handleClose: handleOpen}><img src="./images/chatbox-icon.svg" /></button>
                 </div>
             </div>
