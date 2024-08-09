@@ -6,10 +6,6 @@ import Chatbot from "./components/chatbot";
 import { useEffect, useState } from "react";
 import Link from 'next/link';
 
-
-// TODO: move global styles that are specific to landing page to 
-// page.modules.css and update classNames and ids to {styles.className}
-
 export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [isFirstLoad, setIsFirstLoad] = useState(true);
@@ -26,7 +22,6 @@ export default function Home() {
     setIsLoaded(true);
   }, []);
 
-
   const itemData = [
     {
       img: '/assets/coffee-with-friends.jpg',
@@ -40,7 +35,7 @@ export default function Home() {
       rows: '2',
       cols: '2'
     }
-  ]
+  ];
 
   return (
     <Container id='main' maxWidth="lg" sx={{
@@ -120,44 +115,38 @@ export default function Home() {
             Venie is here to help you with any questions you might have. Ask Venie about payments, transactions, and more!
           </Typography>
           <Container sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, gap: 2, marginTop: "12px" }}>
-          <Button variant="outlined" fullWidth onClick={() => setIsChatOpen(true)}>Chat with Venie</Button>
+            <Button variant="outlined" fullWidth onClick={() => setIsChatOpen(true)}>Chat with Venie</Button>
             <Link href="/faq" passHref legacyBehavior>
               <Button variant="outlined" fullWidth>FAQs</Button>
             </Link>
           </Container>
         </Box>
-        {/* <Box sx={{
-          p: 1,
-          m: 1,
-        }}> */}
-        {/* <ImageList 
-          sx={{ width: 500, height: 450 }} 
-          variant="quilted" 
-          cols={4}
-          rowHeight={121}>
-            {itemData.map((item) => (
-              <ImageListItem key={item.img} cols={item.cols || 1} rows={item.rows || 1}>
-                <img  src={item.img} width={121 * item.cols} height={121 * item.rows}
-                alt={item.title}
-                loading="lazy" />
-                <Box>Test Box</Box>
-              </ImageListItem>
-            ))}
-          </ImageList> */}
-        {/* <Image src={"/assets/brunch-with-friends.jpg"} width={250} height={250} aria-label='Brunch with Friends'></Image>
-          <Image src={"/assets/coffee-with-friends.jpg"} width={250} height={250} aria-label="Coffee with friend"></Image> */}
-        {/* </Box> */}
-        {/* <Box sx={{
-          // display: 'absolute',
-          // bottom: '5px',
-          // right: '5px',
-          alignContent: 'end'
-        }}>
+
+        {/* Optional Image Section */}
+        {/* Uncomment if needed */}
+        {/* <Box sx={{ p: 1, m: 1 }}>
+          <ImageList 
+            sx={{ width: 500, height: 450 }} 
+            variant="quilted" 
+            cols={4}
+            rowHeight={121}>
+              {itemData.map((item) => (
+                <ImageListItem key={item.img} cols={item.cols || 1} rows={item.rows || 1}>
+                  <img  src={item.img} width={121 * item.cols} height={121 * item.rows}
+                  alt={item.title}
+                  loading="lazy" />
+                  <Box>Test Box</Box>
+                </ImageListItem>
+              ))}
+          </ImageList>
+        </Box> */}
+        
+        {/* Uncomment if needed */}
+        {/* <Box sx={{ display: 'absolute', bottom: '5px', right: '5px', alignContent: 'end' }}>
           <Image width='120' height='120' src='/assets/venie.jpg' aria-label='Venie AI chatbot'></Image>
         </Box> */}
-        <Chatbot isOpen={isChatOpen} setIsOpen={setIsChatOpen} />
       </Box>
-      <Chatbot />
+      <Chatbot isOpen={isChatOpen} setIsOpen={setIsChatOpen} />
     </Container>
   );
 }
