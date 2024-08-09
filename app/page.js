@@ -10,8 +10,16 @@ import { useEffect, useState } from "react";
 
 export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false);
+  const [isFirstLoad, setIsFirstLoad] = useState(true);
 
   useEffect(() => {
+    const hasAnimated = localStorage.getItem('hasAnimated');
+    if(!hasAnimated) {
+      setIsFirstLoad(true);
+      localStorage.setItem('hasAnimated', 'true');
+    } else {
+      setIsFirstLoad(false);
+    }
     setIsLoaded(true);
   }, []);
 
@@ -76,8 +84,8 @@ export default function Home() {
                 position: 'relative',
                 fontSize: '120px',
                 zIndex: 1,
-                opacity: 0,
-                animation: isLoaded ? 'fadeIn 1s ease-out forwards': 'none',
+                opacity: isFirstLoad ? 0 : 1,
+                animation: isLoaded && isFirstLoad ? 'fadeIn 1s ease-out forwards': 'none',
                 animationDelay: '0.5s'
               }}
               className="rubik-bubbles-regular"
@@ -93,9 +101,9 @@ export default function Home() {
                 left: '50%',
                 transform: 'translate(-50%, -60%)',
                 zIndex: 2,
-                opacity: 0,
-                animation: isLoaded ? 'fadeIn 1s ease-out forwards' : 'none',
-                animationDelay: '1.5s'
+                opacity: isFirstLoad ? 0 : 1,
+                animation: isLoaded && isFirstLoad ? 'fadeIn 1s ease-out forwards' : 'none',
+                animationDelay: '1.2s'
               }}
               className='primary-text m-plus-rounded-1c-black'
             >
@@ -139,7 +147,7 @@ export default function Home() {
         }}>
           <Image width='120' height='120' src='/assets/venie.jpg' aria-label='Venie AI chatbot'></Image>
         </Box> */}
-        {/* <Chatbot /> */}
+        <Chatbot />
       </Box>
     </Container>
   );
