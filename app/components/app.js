@@ -1,7 +1,6 @@
-class Chatbox {
+export class Chatbox {
     constructor() {
         this.args = {
-            openButton: document.querySelector('.chatbox__button'),
             chatBox: document.querySelector('.chatbox__support'),
             sendButton: document.querySelector('.send__button')
         }
@@ -11,9 +10,7 @@ class Chatbox {
     }
 
     display() {
-        const {openButton, chatBox, sendButton} = this.args;
-
-        openButton.addEventListener('click', () => this.toggleState(chatBox))
+        const { chatBox, sendButton} = this.args;
 
         sendButton.addEventListener('click', () => this.onSendButton(chatBox))
 
@@ -23,17 +20,6 @@ class Chatbox {
                 this.onSendButton(chatBox)
             }
         })
-    }
-
-    toggleState(chatbox) {
-        this.state = !this.state;
-
-        // show or hides the box
-        if(this.state) {
-            chatbox.classList.add('chatbox--active')
-        } else {
-            chatbox.classList.remove('chatbox--active')
-        }
     }
 
     onSendButton(chatbox) {
@@ -87,48 +73,36 @@ class Chatbox {
 }
 
 
-const chatbox = new Chatbox();
-chatbox.display();
+// const chatbox = new Chatbox();
+// chatbox.display();
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
+// document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+//     anchor.addEventListener('click', function(e) {
+//         e.preventDefault();
 
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-});
+//         document.querySelector(this.getAttribute('href')).scrollIntoView({
+//             behavior: 'smooth'
+//         });
+//     });
+// });
 
-document.getElementById('chat-with-venie-btn').addEventListener('click', function() {
-    document.getElementById('venie-popup').style.display = 'block';
-});
+// document.getElementById('chat-with-venie-btn').addEventListener('click', function() {
+//     document.getElementById('venie-popup').style.display = 'block';
+// });
 
-document.addEventListener('DOMContentLoaded', function() {
-    const closePopupButton = document.getElementById('close-popup');
-    if (closePopupButton) {
-        closePopupButton.addEventListener('click', function() {
-            document.getElementById('venie-popup').style.display = 'none';
-        });
-    } else {
-        console.error("Element with ID 'close-popup' not found");
-    }
-});
+// document.addEventListener('DOMContentLoaded', function() {
+//     const closePopupButton = document.getElementById('close-popup');
+//     if (closePopupButton) {
+//         closePopupButton.addEventListener('click', function() {
+//             document.getElementById('venie-popup').style.display = 'none';
+//         });
+//     } else {
+//         console.error("Element with ID 'close-popup' not found");
+//     }
+// });
 
-window.onclick = function(event) {
-    if (event.target === document.getElementById('venie-popup')) {
-        document.getElementById('venie-popup').style.display = 'none';
-    }
-}
-
-document.querySelector('.chatbox__button button').addEventListener('click', function() {
-    document.querySelector('.chatbox').classList.toggle('active');
-});
-
-document.querySelector('.chatbox__button button').addEventListener('click', function() {
-    document.querySelector('.chatbox').classList.add('active');
-});
-
-document.querySelector('.chatbox__close-button').addEventListener('click', function() {
-    document.querySelector('.chatbox').classList.remove('active');
-});
+// window.onclick = function(event) {
+//     if (event.target === document.getElementById('venie-popup')) {
+//         document.getElementById('venie-popup').style.display = 'none';
+//     }
+// }

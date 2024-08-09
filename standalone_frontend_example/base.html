@@ -4,11 +4,85 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Chatbot</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venmo - Simple, Secure, and Social Payments</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="images/Venmo_logo.png" alt="Venmo Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#download">Download</a></li>
+                <li><a href=".chatbox">Contact</a></li>
+            </ul>
+            <div class="cta-buttons">
+                <a href="#download" class="btn-primary">Sign Up</a>
+                <a href="#login" class="btn-secondary">Log In</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Simple, Secure, and Social Payments</h1>
+            <p>Pay friends, split bills, and share payments with Venmo. It’s easy, free, and fun!</p>
+            <a href="#download" class="btn-primary">Get Started</a>
+        </section>
+
+        <section id="meet-venie">
+            <h2>Meet Venie, Venmo's New Chatbot Genie</h2>
+            <p>Venie is here to help you with any questions you might have. Ask Venie about payments, transactions, and more!</p>
+            <button id="chat-with-venie-btn" class="btn-primary">Chat with Venie</button>
+        </section>
+
+        <section id="features">
+            <h2>Features</h2>
+            <div class="features-container">
+                <div class="feature-item">
+                    <img src="#" alt="Feature 1">
+                    <h3>Instant Payments</h3>
+                    <p>Send and receive money instantly with just a tap.</p>
+                </div>
+                <div class="feature-item">
+                    <img src="#" alt="Feature 2">
+                    <h3>Secure Transactions</h3>
+                    <p>Your money is safe with our bank-grade security.</p>
+                </div>
+                <div class="feature-item">
+                    <img src="#" alt="Feature 3">
+                    <h3>Social Sharing</h3>
+                    <p>Share payments and purchases with friends in your feed.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="how-it-works">
+            <h2>How It Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <h3>1. Sign Up</h3>
+                    <p>Create an account with your email or phone number.</p>
+                </div>
+                <div class="step">
+                    <h3>2. Add a Payment Method</h3>
+                    <p>Link your bank account, debit, or credit card.</p>
+                </div>
+                <div class="step">
+                    <h3>3. Start Paying</h3>
+                    <p>Send money to friends, pay for services, or split bills.</p>
+                </div>
+            </div>
+        </section>
+
+
 <div class="container">
-    <div class="chatbox">
+    <div class="chatbox" id="chatbox_id">
         <div class="chatbox__support">
             <div class="chatbox__header">
                 <div class="chatbox__image--header">
@@ -16,8 +90,9 @@
                 </div>
                 <div class="chatbox__content--header">
                     <h4 class="chatbox__heading--header">Chat support</h4>
-                    <p class="chatbox__description--header">Hi. My name is Sam. How can I help you?</p>
+                    <p class="chatbox__description--header">I'm Venie! Do you need help? Chat with me now!</p>
                 </div>
+                <button class="chatbox__close-button">&times;</button>
             </div>
             <div class="chatbox__messages">
                 <div></div>
@@ -28,10 +103,29 @@
             </div>
         </div>
         <div class="chatbox__button">
-            <button><img src="./images/chatbox-icon.svg" /></button>
+            <button><img src="./images/chats.png" alt="Open Chat"/></button>
         </div>
     </div>
 </div>
+
+<section id="download">
+    <h2>Download the App</h2>
+    <p>Get the Venmo app on your mobile device and start sending money today.</p>
+    <div class="download-buttons">
+        <a href="#"><img src="#" alt="Download on the App Store"></a>
+        <a href="#"><img src="#" alt="Get it on Google Play"></a>
+    </div>
+</section>
+</main>
+
+<footer>
+    <p>&copy; 2024 Venmo, Inc. All rights reserved.</p>
+    <ul class="footer-links">
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+        <li><a href="#">Help Center</a></li>
+    </ul>
+</footer>
 
     <script src="./app.js"></script>
 
