@@ -13,6 +13,7 @@ import Link from 'next/link';
 export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [isFirstLoad, setIsFirstLoad] = useState(true);
+  const [isChatOpen, setIsChatOpen] = useState(false);
 
   useEffect(() => {
     const hasAnimated = localStorage.getItem('hasAnimated');
@@ -117,7 +118,7 @@ export default function Home() {
             Venie is here to help you with any questions you might have. Ask Venie about payments, transactions, and more!
             </Typography>
           <Container sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, gap: 2, marginTop: "12px" }}>
-            <Button variant="outlined" fullWidth>Chat with Venie</Button>
+          <Button variant="outlined" fullWidth onClick={() => setIsChatOpen(true)}>Chat with Venie</Button>
             <Link href="/faq" passHref legacyBehavior>
               <Button variant="outlined" fullWidth>FAQs</Button>
             </Link>
@@ -152,7 +153,7 @@ export default function Home() {
         }}>
           <Image width='120' height='120' src='/assets/venie.jpg' aria-label='Venie AI chatbot'></Image>
         </Box> */}
-        <Chatbot />
+        <Chatbot isOpen={isChatOpen} setIsOpen={setIsChatOpen} />
       </Box>
     </Container>
   );

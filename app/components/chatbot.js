@@ -1,10 +1,8 @@
 import styles from "./chatbot.module.css";
 import { Container, Typography, Rating, Image, Box, Button } from "@mui/material";
-import { Chatbox } from "./app";
 import { useState, useEffect } from 'react'
 
-export default function Chatbot() {
-    const [isOpen, setIsOpen] = useState(false);
+export default function Chatbot({isOpen, setIsOpen}) {
     const [ratingValue, setRatingValue] = useState(0);
     const [message, setMessage] = useState('');
 
@@ -43,14 +41,15 @@ export default function Chatbot() {
         <Container>
             <Box className={styles.chatbox} id={styles.chatbox_id} >
                 <Box className={styles.chatbox__support} sx={{ display: isOpen ? 'flex' : 'none', zIndex: 10,}}>
-                    <Box className={styles.chatbox__header}>
-                        <Button onClick={() => setIsOpen(false)} className={styles.chatbox__image__header}>
-                            <img src="/assets/venie.jpg" width={60} alt="image" />
+                <Box className={styles.chatbox__headerContent}>
+                            <Button onClick={() => setIsOpen(false)} className={styles.chatbox__closeButton}>
+                                X
                             </Button>
-                        <div className={styles.chatbox__content__header}>
-                            <h4 className={styles.chatbox__heading__header}>Chat support</h4>
-                            <p className={styles.chatbox__description__header}>I'm Venie! Do you need help? Chat with me now!</p>
-                        </div>
+                            <div className={styles.chatbox__content__header}>
+                                <h4 className={styles.chatbox__heading__header}>Chat support</h4>
+                                <p className={styles.chatbox__description__header}>I'm Venie! Do you need help? Chat with me now!</p>
+                            </div>
+                        </Box>
                     </Box>
                     <Box className={styles.chatbox__messages}>
                         {/* Messages will be displayed here */}
@@ -79,15 +78,11 @@ export default function Chatbot() {
                         </button>
                     </Box>
                 </Box>
-                <Box className={styles.chatbox__button} sx={{display: isOpen ? 'none' : 'block'}}>
-                    <Button onClick={() => {
-                        setIsOpen(!isOpen);
-                        console.log('button pressed', isOpen);
-                        }} >
-                        <img src="/assets/chatbox-icon.svg" alt="Chatbox icon" />
+                <Box className={styles.chatbox__button} sx={{ display: isOpen ? 'none' : 'block' }}>
+                    <Button onClick={() => setIsOpen(true)} >
+                        <img src="/assets/chats.png" alt="Chatbox icon" width="50" height="50"/>
                     </Button>
                 </Box>
-            </Box>
         </Container>
     );
 };
