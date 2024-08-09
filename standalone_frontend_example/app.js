@@ -120,3 +120,15 @@ window.onclick = function(event) {
         document.getElementById('venie-popup').style.display = 'none';
     }
 }
+
+document.querySelector('.chatbox__button button').addEventListener('click', function() {
+    document.querySelector('.chatbox').classList.toggle('active');
+});
+
+document.querySelector('.chatbox__button button').addEventListener('click', function() {
+    document.querySelector('.chatbox').classList.add('active');
+});
+
+document.querySelector('.chatbox__close-button').addEventListener('click', function() {
+    document.querySelector('.chatbox').classList.remove('active');
+});

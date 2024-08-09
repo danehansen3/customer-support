@@ -219,37 +219,71 @@ footer {
 
 /* CHATBOX
 =============== */
+.container {
+    position: fixed;
+    bottom: 20px;  
+    right: 20px;   
+    z-index: 1000; 
+    width: 350px;
+    max-height: calc(100vh - 40px);
+    overflow: hidden;  
+}
+
 .chatbox {
-    position: absolute;
-    bottom: 30px;
-    right: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
 }
 
 /* CONTENT IS CLOSE */
 .chatbox__support {
-    display: flex;
+    display: none;
     flex-direction: column;
     background: #eee;
-    width: 300px;
-    height: 350px;
-    z-index: -123456;
-    opacity: 0;
+    width: 100%;
+    height: 100%;
+    /* z-index: -123456; */
+    /* opacity: 0; */
     transition: all .5s ease-in-out;
 }
 
 /* CONTENT ISOPEN */
 .chatbox--active {
-    transform: translateY(-40px);
+    /* transform: translateY(-40px); */
     z-index: 123456;
     opacity: 1;
 
 }
 
+.chatbox--active .chatbox__support {
+    display: flex;
+}
+
 /* BUTTON */
 .chatbox__button {
-    text-align: right;
+    text-align: center;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
 
 }
+
+.chatbox__button button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.chatbox.active .chatbox__support {
+    display: block;
+}
+
 
 .send__button {
     padding: 6px;
@@ -259,15 +293,28 @@ footer {
     cursor: pointer;
 }
 
-
+.chatbox__button img {
+    width: 50px;
+    height: 50px;
+}
 
 
 /* HEADER */
 .chatbox__header {
-    position: sticky;
+    background: var(--primaryGradient);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    box-shadow: var(--primaryBoxShadow);
+    position: relative;
     top: 0;
-    background: orange;
+    z-index: 1;
 }
+
 
 /* MESSAGES */
 .chatbox__messages {
@@ -293,8 +340,24 @@ footer {
 
 /* FOOTER */
 .chatbox__footer {
-    position: sticky;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 20px;
+    background: var(--secondaryGradient);
+    box-shadow: var(--secondaryBoxShadow);
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    position: absolute; 
     bottom: 0;
+    z-index: 1;
+    width: 100%; 
+}
+
+.chatbox__header,
+.chatbox__footer {
+    z-index: 2;
 }
 
 .chatbox__support {
@@ -304,6 +367,8 @@ footer {
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+    max-height: calc(100vh - 60px);
+    overflow-y: auto;
 }
 
 /* HEADER */
@@ -313,10 +378,13 @@ footer {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    padding: 15px 20px;
+    padding: 20px 20px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     box-shadow: var(--primaryBoxShadow);
+    top: 0;
+    z-index: 1;
+    width: 100%;
 }
 
 .chatbox__image--header {
@@ -336,6 +404,10 @@ footer {
 /* Messages */
 .chatbox__messages {
     padding: 0 20px;
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column-reverse;
 }
 
 .messages__item {
@@ -358,20 +430,6 @@ footer {
     border-bottom-left-radius: 20px;
     background: var(--primary);
     color: white;
-}
-
-/* FOOTER */
-.chatbox__footer {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 20px;
-    background: var(--secondaryGradient);
-    box-shadow: var(--secondaryBoxShadow);
-    border-bottom-right-radius: 10px;
-    border-bottom-left-radius: 10px;
-    margin-top: 20px;
 }
 
 .chatbox__footer input {
@@ -398,4 +456,18 @@ footer {
     border-bottom-left-radius: 50px;
     box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
     cursor: pointer;
+}
+
+.chatbox__close-button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+    margin-left: auto;
+    padding: 0 10px;
+}
+
+.chatbox__close-button:hover {
+    color: #ff0044;
 }
