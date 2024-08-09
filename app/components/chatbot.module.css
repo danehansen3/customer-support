@@ -6,15 +6,6 @@
     right: 30px;
 }
 
-/* CONTENT IS CLOSE */
-.chatbox__support {
-    flex-direction: column;
-    background: #f0f0f0c5;
-    width: 300px;
-    height: 350px;
-    /* opacity: 0; */
-    transition: all .5s ease-in-out;
-}
 
 /* CONTENT ISOPEN */
 .chatbox--active {
@@ -79,11 +70,13 @@
 }
 
 .chatbox__support {
-    background: #f9f9f9dc;
+    background: #f1efeffd;
     height: 450px;
     width: 350px;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
     border-radius: 20px;
+    flex-direction: column;
+    transition: all .5s ease-in-out;
 }
 
 /* HEADER */

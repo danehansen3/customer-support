@@ -17,7 +17,7 @@ export default function Home() {
 
   useEffect(() => {
     const hasAnimated = localStorage.getItem('hasAnimated');
-    if(!hasAnimated) {
+    if (!hasAnimated) {
       setIsFirstLoad(true);
       localStorage.setItem('hasAnimated', 'true');
     } else {
@@ -25,7 +25,7 @@ export default function Home() {
     }
     setIsLoaded(true);
   }, []);
-  
+
 
   const itemData = [
     {
@@ -41,7 +41,7 @@ export default function Home() {
       cols: '2'
     }
   ]
-  
+
   return (
     <Container id='main' maxWidth="lg" sx={{
       display: "flex", flexDirection: 'column', p: 1,
@@ -62,6 +62,7 @@ export default function Home() {
         flexDirection: 'row',
         width: '100%'
       }}>
+        {/* INTRO BOX */}
         <Box
           sx={{
             p: 1,
@@ -71,7 +72,8 @@ export default function Home() {
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
-            alignItems: 'center'
+            alignItems: 'center',
+            flexGrow: 1
           }}
         >
           <Box sx={{ width: "100%", maxWidth: "350px", bgcolor: "white", textAlign: 'center' }}>
@@ -89,7 +91,7 @@ export default function Home() {
                 fontSize: '120px',
                 zIndex: 1,
                 opacity: isFirstLoad ? 0 : 1,
-                animation: isLoaded && isFirstLoad ? 'fadeIn 1s ease-out forwards': 'none',
+                animation: isLoaded && isFirstLoad ? 'fadeIn 1s ease-out forwards' : 'none',
                 animationDelay: '0.5s'
               }}
               className="rubik-bubbles-regular"
@@ -107,7 +109,7 @@ export default function Home() {
                 zIndex: 2,
                 opacity: isFirstLoad ? 0 : 1,
                 animation: isLoaded && isFirstLoad ? 'fadeIn 1s ease-out forwards' : 'none',
-                animationDelay: '1.2s'
+                animationDelay: '1.5s'
               }}
               className='primary-text m-plus-rounded-1c-black'
             >
@@ -116,7 +118,7 @@ export default function Home() {
           </Box>
           <Typography variant='h6' className="primary-text" margin={'12px'} textAlign={'center'}>
             Venie is here to help you with any questions you might have. Ask Venie about payments, transactions, and more!
-            </Typography>
+          </Typography>
           <Container sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, gap: 2, marginTop: "12px" }}>
           <Button variant="outlined" fullWidth onClick={() => setIsChatOpen(true)}>Chat with Venie</Button>
             <Link href="/faq" passHref legacyBehavior>
@@ -124,11 +126,11 @@ export default function Home() {
             </Link>
           </Container>
         </Box>
-        <Box sx={{
+        {/* <Box sx={{
           p: 1,
           m: 1,
-        }}>
-          {/* <ImageList 
+        }}> */}
+        {/* <ImageList 
           sx={{ width: 500, height: 450 }} 
           variant="quilted" 
           cols={4}
@@ -142,9 +144,9 @@ export default function Home() {
               </ImageListItem>
             ))}
           </ImageList> */}
-          {/* <Image src={"/assets/brunch-with-friends.jpg"} width={250} height={250} aria-label='Brunch with Friends'></Image>
+        {/* <Image src={"/assets/brunch-with-friends.jpg"} width={250} height={250} aria-label='Brunch with Friends'></Image>
           <Image src={"/assets/coffee-with-friends.jpg"} width={250} height={250} aria-label="Coffee with friend"></Image> */}
-        </Box>
+        {/* </Box> */}
         {/* <Box sx={{
           // display: 'absolute',
           // bottom: '5px',
@@ -153,8 +155,12 @@ export default function Home() {
         }}>
           <Image width='120' height='120' src='/assets/venie.jpg' aria-label='Venie AI chatbot'></Image>
         </Box> */}
+<<<<<<< HEAD
         <Chatbot isOpen={isChatOpen} setIsOpen={setIsChatOpen} />
+=======
+>>>>>>> 0d592410e552e31d8c12f78461a5478fbd612091
       </Box>
+      <Chatbot />
     </Container>
   );
 }

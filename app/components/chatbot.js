@@ -1,6 +1,8 @@
 import styles from "./chatbot.module.css";
 import { Container, Typography, Rating, Image, Box, Button } from "@mui/material";
-import { useState, useEffect } from 'react'
+import { Chatbox } from "./app";
+import { useState, useEffect } from 'react';
+import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 
 export default function Chatbot({isOpen, setIsOpen}) {
     const [ratingValue, setRatingValue] = useState(0);
@@ -78,9 +80,12 @@ export default function Chatbot({isOpen, setIsOpen}) {
                         </button>
                     </Box>
                 </Box>
-                <Box className={styles.chatbox__button} sx={{ display: isOpen ? 'none' : 'block' }}>
-                    <Button onClick={() => setIsOpen(true)} >
-                        <img src="/assets/chats.png" alt="Chatbox icon" width="50" height="50"/>
+                <Box className={styles.chatbox__button} sx={{display: isOpen ? 'none' : 'block'}}>
+                    <Button onClick={() => {
+                        setIsOpen(!isOpen);
+                        console.log('button pressed', isOpen);
+                        }} >
+                        <img src="/assets/chats.png" width={60} alt="Chatbox icon" />
                     </Button>
                 </Box>
         </Container>
