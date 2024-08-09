@@ -49,6 +49,11 @@ body {
   }
 }
 
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
 a {
   color: inherit;
   text-decoration: none;
