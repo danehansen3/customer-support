@@ -151,6 +151,21 @@
         "Refunds are processed within 5-7 business days. Please reach out to our support team to initiate a refund.",
         "You can find our refund policy on our website. For any refund requests, contact our support team."
       ]
+    },
+    {
+      "tag": "transactions",
+      "patterns": [
+        "How do I check my transaction history?",
+        "Can I view recent transactions?",
+        "How do I track a payment?",
+        "What should I do if a transaction is missing?"
+      ],
+      "responses": [
+        "You can view your transaction history by logging into your account and navigating to the 'Transaction History' section.",
+        "To track a payment, check the 'Payments' tab in your account or use our payment tracking tool.",
+        "If you notice a missing transaction, please contact our support team with your transaction details for assistance.",
+        "For detailed transaction queries, please visit our website or reach out to customer support."
+      ]
     }
   ]
 }
