@@ -59,21 +59,6 @@ export default function Chatbot({ isOpen, setIsOpen }) {
         }
     };
 
-    // const handleSendMessage = () => {
-    //     if (message.trim()) {
-    //         const newMessages = [...messages, { text: message, sender: 'user' }];
-    //         setMessages(newMessages);
-    //         setMessage('');
-    //         getMessageResponse(message)
-    //         // Simulate a response from Venie after a short delay
-    //         // setTimeout(() => {
-    //         //     const venieMessage = venieResponses[Math.floor(Math.random() * venieResponses.length)];
-    //         //     setMessages(prevMessages => [...prevMessages, { text: venieMessage, sender: 'venie' }]);
-    //         //     // setMessages(prevMessages => [...prevMessages, getResponse(message)]);
-    //         // }, 1000);
-    //     }
-    // };
-
     const handleKeyDown = (e) => {
         if (e.key === 'Enter' && !e.shiftKey) {
             e.preventDefault();
