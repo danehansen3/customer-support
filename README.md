@@ -1,30 +1,24 @@
-# customer-support
-## Venmo Customer Support (will think of a different name) 
-
-*Updates should be sent daily about what you did, what you will do, and if you are having any issues*
+## Venie, Venmo's Customer Support
 
 #### Frontend: Celina and Bree
-**8/6** - create template app 
-**8/7 & 8/8**- work on frontend
-***NEED TO DO***
-- choose theme
-- choose style
-- choose framework
-- Create site landing page  explaining what business is about
-- popup customer service chat bot (like venmo)
+
+- Created Design 8/7
+- Developed Landing Page and Faq Page 8/8
+- Created Chatbot Component 8/9
+- Fixed Stylistic and Functionality Issues
 
 #### Backend: Raj and Dane
 **8/6** - self-study and research of models and datasets
-**8/7 & 8/8** - work on backend
-***NEED TO DO***
-- choose AI
-- choose model 
-- choose datasets
-- start incorporating
+**8/7 & 8/8** - chose datasets, trained bot, added message responses
 
-**Integration starts Friday 8/9**
-**Final touch-ups 8/10**
-**Make slideshow and video - 8/11**
-**Submit and make Reddit post - 8/11**
+#### Integration: Celina and Dane
 
-I will add this to the README, feel free to update with extra details [who does what, frameworks and languages chosen, any helpful tutorials you found/used, etc.]
+Done on 8/9 and took a couple hours because the correct python packages weren't installed and errors were not very descriptive.
+
+Helpful Links While Developing:
+[Build and Generate Custom Chat Bot](https://www.youtube.com/watch?v=a37BL0stIuM)
+[Datasets for Chatbots](https://www.kaggle.com/datasets/grafstor/simple-dialogs-for-chatbot)
+[Popups](https://www.w3schools.com/howto/howto_js_popup_chat.asp)
+[MUI](https://mui.com/material-ui)
+[Next.js and Flask](https://github.com/vercel/examples/blob/main/python/nextjs-flask/app/page.tsx)
+[Initial Design - made in Canva](https://www.canva.com/design/DAGNOJld40A/9n3_of17eUdO5ZXV2uyJqQ/view?utm_content=DAGNOJld40A&utm_campaign=designshare&utm_medium=link&utm_source=editor#1)

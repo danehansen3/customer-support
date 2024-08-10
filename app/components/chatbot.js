@@ -3,6 +3,8 @@ import { Container, Box, Button } from "@mui/material";
 import { useState, useEffect, useRef } from 'react';
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 
+const API_URL = process.env.REACT_APP_API_URL || 'http://127.0.0.1:5000';
+
 export default function Chatbot({ isOpen, setIsOpen }) {
     const [messages, setMessages] = useState([]);
     const [message, setMessage] = useState('');
@@ -17,17 +19,43 @@ export default function Chatbot({ isOpen, setIsOpen }) {
         "I'm on it!"
     ];
 
-    const handleSendMessage = () => {
+    const getMessageResponse = async (userMessage) => {
+        try {
+            const response = await fetch(`http://127.0.0.1:5000/predict`, {
+                method: 'POST',
+                body: JSON.stringify({ message: userMessage }),
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+            });
+            
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            
+            const data = await response.json();
+            return data.answer;
+        } catch (error) {
+            console.error('Error:', error);
+            return "Sorry, I'm having trouble connecting to the server. Please ensure the server is running and try again.";
+        }
+    };
+
+    const handleSendMessage = async () => {
         if (message.trim()) {
-            const newMessages = [...messages, { text: message, sender: 'user' }];
-            setMessages(newMessages);
+            const newUserMessage = { text: message, sender: 'user' };
+            setMessages(prevMessages => [...prevMessages, newUserMessage]);
             setMessage('');
 
-            // Simulate a response from Venie after a short delay
-            setTimeout(() => {
-                const venieMessage = venieResponses[Math.floor(Math.random() * venieResponses.length)];
-                setMessages(prevMessages => [...prevMessages, { text: venieMessage, sender: 'venie' }]);
-            }, 1000);
+            try {
+                const botResponse = await getMessageResponse(message);
+                const newBotMessage = { text: botResponse, sender: 'venie' };
+                setMessages(prevMessages => [...prevMessages, newBotMessage]);
+            } catch (error) {
+                console.error('Failed to get bot response:', error);
+                const errorMessage = { text: "Sorry, I couldn't process your request. Please try again later.", sender: 'venie' };
+                setMessages(prevMessages => [...prevMessages, errorMessage]);
+            }
         }
     };
 
